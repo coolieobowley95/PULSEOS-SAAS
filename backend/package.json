@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon --watch . --ext js,json --delay 0.2 index.js",
     "start": "node index.js",
+    "build": "prisma generate",
     "db:pull": "prisma db pull",
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
