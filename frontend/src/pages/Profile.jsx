@@ -1,16 +1,13 @@
 // frontend/src/pages/Profile.jsx
-// User profile, account stats, AI memory viewer, and settings.
-// All data from /api/profile — single endpoint for everything.
-
 import { useState, useEffect } from 'react'
 import api from '../services/api'
 import {
   Mail, Lock, Brain, Flame, CheckSquare,
   Target, BookOpen, Edit3, Save,
-  ChevronDown, ChevronUp, Trash2, Loader2
+  ChevronDown, ChevronUp, Trash2, Loader2,
+  Sparkles, CreditCard, Zap
 } from 'lucide-react'
 
-// ─── Category badge colors ────────────────────────────────────────────────────
 const CAT_COLORS = {
   project:    'bg-violet-500/10 text-violet-400 border-violet-500/20',
   habit:      'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
@@ -22,7 +19,6 @@ const CAT_COLORS = {
   general:    'bg-white/5 text-fg-muted border-white/10',
 }
 
-// ─── Small reusable components ────────────────────────────────────────────────
 function StatCard({ icon: Icon, label, value, color = 'violet' }) {
   const colors = {
     violet:  'bg-violet-500/10 border-violet-500/20 text-violet-400',
@@ -100,11 +96,9 @@ function FeedbackMsg({ msg }) {
   )
 }
 
-// ─── Avatar component — initials fallback ────────────────────────────────────
 function Avatar({ name, avatar, size = 'lg' }) {
   const initials = (name || '?').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
   const sz = size === 'lg' ? 'w-20 h-20 text-2xl' : 'w-10 h-10 text-sm'
-
   if (avatar) {
     return <img src={avatar} alt={name} className={`${sz} rounded-3xl object-cover border-2 border-violet-500/30`} />
   }
@@ -115,33 +109,127 @@ function Avatar({ name, avatar, size = 'lg' }) {
   )
 }
 
+// ─── Billing Section ──────────────────────────────────────────────────────────
+function BillingSection({ plan }) {
+  const [loading, setLoading] = useState(false)
+  const isPro = plan === 'pro'
+
+  async function handleUpgrade() {
+    setLoading(true)
+    try {
+      const { data } = await api.post('/billing/checkout')
+      window.location.href = data.url
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  async function handleManage() {
+    setLoading(true)
+    try {
+      const { data } = await api.post('/billing/portal')
+      window.location.href = data.url
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <SectionCard title="Plan & Billing" icon={CreditCard} defaultOpen={true}>
+      {isPro ? (
+        <div className="space-y-4">
+          <div className="flex items-center gap-3 p-4 bg-violet-500/10 border border-violet-500/20 rounded-xl">
+            <Sparkles size={18} className="text-violet-400 shrink-0" />
+            <div>
+              <p className="text-sm font-semibold text-fg">You're on Pro 🎉</p>
+              <p className="text-xs text-fg-muted">All features unlocked. Thank you for supporting PulseOS!</p>
+            </div>
+          </div>
+          <button
+            onClick={handleManage}
+            disabled={loading}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.08] border border-white/[0.08] text-white text-xs font-semibold disabled:opacity-50 transition-colors"
+          >
+            {loading ? <Loader2 size={13} className="animate-spin" /> : <CreditCard size={13} />}
+            {loading ? 'Loading...' : 'Manage subscription'}
+          </button>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          <div className="p-4 bg-white/[0.02] border border-white/[0.06] rounded-xl space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-semibold text-fg">Free Plan</span>
+              <span className="text-[10px] font-mono tracking-widest text-fg-muted uppercase bg-white/5 border border-white/10 px-2 py-0.5 rounded-full">Current</span>
+            </div>
+            <ul className="space-y-1.5 text-xs text-fg-muted">
+              <li>✓ Tasks, goals, journal</li>
+              <li>✓ 10 AI chat messages/day</li>
+              <li>✓ 5 memories stored</li>
+              <li className="text-white/30">✗ Unlimited AI chat</li>
+              <li className="text-white/30">✗ Full analytics & reports</li>
+              <li className="text-white/30">✗ Daily briefing</li>
+              <li className="text-white/30">✗ GitHub integration</li>
+            </ul>
+          </div>
+
+          <div className="p-4 bg-violet-500/10 border border-violet-500/30 rounded-xl space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-semibold text-fg flex items-center gap-1.5">
+                <Zap size={14} className="text-violet-400" /> Pro Plan
+              </span>
+              <span className="text-sm font-black text-violet-400">£9/mo</span>
+            </div>
+            <ul className="space-y-1.5 text-xs text-fg-muted">
+              <li className="text-emerald-400">✓ Everything in Free</li>
+              <li className="text-emerald-400">✓ Unlimited AI chat</li>
+              <li className="text-emerald-400">✓ Unlimited memories</li>
+              <li className="text-emerald-400">✓ Full analytics & weekly reports</li>
+              <li className="text-emerald-400">✓ Daily AI briefing</li>
+              <li className="text-emerald-400">✓ GitHub integration</li>
+              <li className="text-emerald-400">✓ Spotify integration</li>
+            </ul>
+            <button
+              onClick={handleUpgrade}
+              disabled={loading}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white text-xs font-semibold disabled:opacity-50 transition-colors"
+            >
+              {loading ? <Loader2 size={13} className="animate-spin" /> : <Zap size={13} />}
+              {loading ? 'Redirecting...' : 'Upgrade to Pro — £9/mo'}
+            </button>
+          </div>
+        </div>
+      )}
+    </SectionCard>
+  )
+}
+
 // ─── Main Page ─────────────────────────────────────────────────────────────────
 export default function Profile() {
-  const [data, setData]         = useState(null)
-  const [loading, setLoading]   = useState(true)
+  const [data, setData]       = useState(null)
+  const [loading, setLoading] = useState(true)
 
-  // Edit profile state
-  const [editName, setEditName] = useState('')
-  const [editBio,  setEditBio]  = useState('')
+  const [editName, setEditName]     = useState('')
+  const [editBio, setEditBio]       = useState('')
   const [editAvatar, setEditAvatar] = useState('')
   const [profileMsg, setProfileMsg] = useState('')
   const [profileSaving, setProfileSaving] = useState(false)
 
-  // Email state
-  const [newEmail,      setNewEmail]      = useState('')
+  const [newEmail, setNewEmail]           = useState('')
   const [emailPassword, setEmailPassword] = useState('')
-  const [emailMsg,      setEmailMsg]      = useState('')
-  const [emailSaving,   setEmailSaving]   = useState(false)
+  const [emailMsg, setEmailMsg]           = useState('')
+  const [emailSaving, setEmailSaving]     = useState(false)
 
-  // Password state
   const [currentPw, setCurrentPw] = useState('')
-  const [newPw,     setNewPw]     = useState('')
+  const [newPw, setNewPw]         = useState('')
   const [confirmPw, setConfirmPw] = useState('')
-  const [pwMsg,     setPwMsg]     = useState('')
-  const [pwSaving,  setPwSaving]  = useState(false)
+  const [pwMsg, setPwMsg]         = useState('')
+  const [pwSaving, setPwSaving]   = useState(false)
 
-  // Memory state
-  const [memories,        setMemories]        = useState([])
+  const [memories, setMemories]               = useState([])
   const [deletingMemoryId, setDeletingMemoryId] = useState(null)
 
   useEffect(() => { fetchProfile() }, [])
@@ -151,7 +239,7 @@ export default function Profile() {
       const { data: d } = await api.get('/profile')
       setData(d)
       setEditName(d.user.name || '')
-      setEditBio(d.user.bio   || '')
+      setEditBio(d.user.bio || '')
       setEditAvatar(d.user.avatar || '')
       setMemories(d.memories || [])
     } catch (err) {
@@ -161,7 +249,6 @@ export default function Profile() {
     }
   }
 
-  // ── Save profile ──
   async function handleProfileSave(e) {
     e.preventDefault()
     setProfileSaving(true)
@@ -177,7 +264,6 @@ export default function Profile() {
     }
   }
 
-  // ── Change email ──
   async function handleEmailSave(e) {
     e.preventDefault()
     setEmailSaving(true)
@@ -195,7 +281,6 @@ export default function Profile() {
     }
   }
 
-  // ── Change password ──
   async function handlePasswordSave(e) {
     e.preventDefault()
     if (newPw !== confirmPw) { setPwMsg('✗ Passwords do not match'); return }
@@ -213,7 +298,6 @@ export default function Profile() {
     }
   }
 
-  // ── Delete memory ──
   async function handleDeleteMemory(id) {
     setDeletingMemoryId(id)
     try {
@@ -248,7 +332,7 @@ export default function Profile() {
             <p className="text-sm text-fg-muted truncate">{user.email}</p>
             {user.bio && <p className="text-xs text-fg-muted/70 mt-1 line-clamp-2">{user.bio}</p>}
             <div className="flex items-center gap-2 mt-2">
-              <span className="text-[10px] font-mono tracking-widest text-violet-400 uppercase bg-violet-500/10 border border-violet-500/20 px-2 py-0.5 rounded-full">
+              <span className={`text-[10px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-full border ${user.plan === 'pro' ? 'text-violet-400 bg-violet-500/10 border-violet-500/20' : 'text-fg-muted bg-white/5 border-white/10'}`}>
                 {user.plan} plan
               </span>
               <span className="text-[11px] text-fg-muted">
@@ -268,6 +352,9 @@ export default function Profile() {
         <StatCard icon={Flame}       label="Journal streak"  value={`${streaks?.journal?.current ?? 0}d`} color="emerald" />
         <StatCard icon={Brain}       label="AI memories"     value={stats.memoriesCount}  color="blue"    />
       </div>
+
+      {/* ── Billing ── */}
+      <BillingSection plan={user.plan} />
 
       {/* ── Edit profile ── */}
       <SectionCard title="Edit Profile" icon={Edit3}>
@@ -338,10 +425,7 @@ export default function Profile() {
         ) : (
           <div className="space-y-2">
             {memories.map(m => (
-              <div
-                key={m.id}
-                className="flex items-start justify-between gap-3 p-3 bg-white/[0.02] border border-white/[0.05] rounded-xl"
-              >
+              <div key={m.id} className="flex items-start justify-between gap-3 p-3 bg-white/[0.02] border border-white/[0.05] rounded-xl">
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-fg">{m.fact}</p>
                   <span className={`mt-1 inline-block text-[10px] px-2 py-0.5 rounded-full border font-mono ${CAT_COLORS[m.category] || CAT_COLORS.general}`}>
@@ -353,10 +437,7 @@ export default function Profile() {
                   disabled={deletingMemoryId === m.id}
                   className="text-fg-muted hover:text-red-400 transition-colors shrink-0 mt-0.5"
                 >
-                  {deletingMemoryId === m.id
-                    ? <Loader2 size={14} className="animate-spin" />
-                    : <Trash2 size={14} />
-                  }
+                  {deletingMemoryId === m.id ? <Loader2 size={14} className="animate-spin" /> : <Trash2 size={14} />}
                 </button>
               </div>
             ))}
