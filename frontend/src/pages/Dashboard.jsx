@@ -20,6 +20,7 @@ import { Progress } from '../components/ui/Progress'
 import { RingProgress } from '../components/ui/RingProgress'
 import { Skeleton } from '../components/ui/Skeleton'
 import { Sparkline } from '../components/ui/Sparkline'
+import DailyBriefing from '../components/DailyBriefing.jsx'
 
 function greeting() {
   const h = new Date().getHours()
@@ -113,6 +114,7 @@ export default function Dashboard() {
   return (
     <Page>
       <div className="px-1 md:px-2">
+        <DailyBriefing />
         <div className="mb-6 md:mb-8">
           <PageTitle>
             {greeting()},{' '}

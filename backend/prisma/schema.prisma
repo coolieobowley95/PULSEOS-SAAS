@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
-
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
@@ -18,12 +15,50 @@ model User {
   email     String    @unique
   password  String
   name      String
-  createdAt DateTime  @default(now())
+   githubToken    String?
+  githubUsername String?
+  bio       String?   // ← ADD
+  avatar    String?   // ← ADD
 
-  tasks     Task[]
-  goals     Goal[]
-  journals  Journal[]
-  chats     Chat[]
+  // Subscription
+  plan             String   @default("free")
+  stripeCustomerId String?
+
+  createdAt DateTime @default(now())
+
+  // Core Features
+  tasks          Task[]
+  goals          Goal[]
+  journals       Journal[]
+  chats          Chat[]
+  dailyBriefings DailyBriefing[]
+  memories       Memory[]
+  weeklyReports  WeeklyReport[]
+
+  // Social
+  posts    Post[]
+  likes    Like[]
+  comments Comment[]
+  followers Follow[] @relation("following")
+  following Follow[] @relation("follower")
+
+  // Calendar Integration (ADDED)
+  calendarToken   CalendarToken?
+
+  // Streaks and Push Notifications
+  streaks           Streak[]
+  pushSubscriptions PushSubscription[]
+}
+
+model CalendarToken {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  accessToken  String
+  refreshToken String
+  expiryDate   DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model Task {
@@ -72,5 +107,130 @@ model Message {
   content   String
   chatId    String
   chat      Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model DailyBriefing {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  plan        String
+  motivation  String
+  topTasks    String
+  focusTip    String
+  date        DateTime @default(now())
+  createdAt   DateTime @default(now())
+}
+
+model Memory {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  fact      String
+  category  String   @default("general")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model WeeklyReport {
+  id                String   @id @default(cuid())
+  userId            String
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  weekStart         DateTime
+  weekEnd           DateTime
+  productivityScore Int
+  tasksCompleted    Int
+  tasksCreated      Int
+  goalsUpdated      Int
+  journalEntries    Int
+  dominantMood      String?
+  wins              String
+  challenges        String
+  nextWeekFocus     String
+  aiNarrative       String
+  createdAt         DateTime @default(now())
+}
+
+model Post {
+  id        String    @id @default(cuid())
+  content   String
+  type      String    @default("win")
+
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  likes    Like[]
+  comments Comment[]
+
+  isPublic  Boolean   @default(true)
+  aiSummary String?
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Like {
+  id        String   @id @default(cuid())
+
+  userId    String
+  postId    String
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, postId])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+
+  content   String
+
+  userId    String
+  postId    String
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+}
+
+model Follow {
+  id          String   @id @default(cuid())
+
+  followerId  String
+  followingId String
+
+  follower    User     @relation("follower", fields: [followerId], references: [id], onDelete: Cascade)
+  following   User     @relation("following", fields: [followingId], references: [id], onDelete: Cascade)
+
+  createdAt   DateTime @default(now())
+
+  @@unique([followerId, followingId])
+}
+
+model Streak {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type      String   // "task" | "journal" | "goal"
+  current   Int      @default(0)
+  longest   Int      @default(0)
+  lastDate  DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, type])
+}
+
+model PushSubscription {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  endpoint  String   @unique
+  p256dh    String
+  auth      String
   createdAt DateTime @default(now())
 }

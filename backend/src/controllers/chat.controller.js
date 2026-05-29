@@ -1,8 +1,8 @@
-import 'dotenv/config'
-import Groq from 'groq-sdk'
+import { getGroqClient } from '../lib/groq.js'
 import { prisma } from '../lib/prisma.js'
+import { extractMemoriesFromChat } from './memory.controller.js'
 
-const groq = new Groq({ apiKey: process.env.GROQ_API_KEY })
+let groq
 
 export const getChats = async (req, res) => {
   try {
@@ -75,7 +75,7 @@ export const sendMessage = async (req, res) => {
     ]
 
     console.log('Calling Groq API...')
-
+    groq = groq || getGroqClient()
     const completion = await groq.chat.completions.create({
       model: 'llama-3.1-8b-instant',
       messages,
@@ -90,6 +90,8 @@ export const sendMessage = async (req, res) => {
     const aiMessage = await prisma.message.create({
       data: { role: 'assistant', content: aiText, chatId: chat.id }
     })
+
+    extractMemoriesFromChat(req.userId, [...history, { role: 'assistant', content: aiText }]).catch(console.error)
 
     if (chat.title === 'New Chat') {
       await prisma.chat.update({
@@ -119,7 +121,7 @@ export const deleteChat = async (req, res) => {
 }
 
 async function getUserContext(userId) {
-  const [tasks, goals, journals] = await Promise.all([
+  const [tasks, goals, journals, memories] = await Promise.all([
     prisma.task.findMany({
       where: { userId },
       orderBy: { createdAt: 'desc' },
@@ -134,15 +136,28 @@ async function getUserContext(userId) {
       where: { userId },
       orderBy: { createdAt: 'desc' },
       take: 5
+    }),
+    prisma.memory.findMany({
+      where: { userId },
+      orderBy: { updatedAt: 'desc' },
+      take: 50
     })
   ])
-  return { tasks, goals, journals }
+  return { tasks, goals, journals, memories }
 }
 
-function buildSystemPrompt({ tasks, goals, journals }) {
+function buildSystemPrompt({ tasks, goals, journals, memories }) {
   const pendingTasks = tasks.filter(t => !t.done)
   const doneTasks = tasks.filter(t => t.done)
   const recentMoods = journals.map(j => j.mood).filter(Boolean)
+  const memoryLines = (Array.isArray(memories) ? memories : [])
+    .map(m => {
+      const cat = String(m?.category || 'general')
+      const fact = String(m?.fact || '').trim()
+      if (!fact) return null
+      return `* [${cat}] ${fact}`
+    })
+    .filter(Boolean)
 
   return `You are PulseOS, an intelligent AI life assistant. You help users manage their tasks, goals, journal, and overall life direction.
 
@@ -161,9 +176,13 @@ ${recentMoods.length ? recentMoods.join(', ') : 'No journal entries yet'}
 RECENT JOURNAL ENTRIES:
 ${journals.slice(0, 3).map(j => `- ${new Date(j.createdAt).toLocaleDateString()}: "${j.content.slice(0, 100)}"`).join('\n') || 'None'}
 
+WHAT YOU REMEMBER ABOUT THIS USER:
+${memoryLines.length ? memoryLines.join('\n') : '* [general] (No saved memories yet)'}
+
 Your personality:
-- Concise, smart, and encouraging
+- Concise, personal, intelligent, motivational
 - Reference the user's actual data when relevant
+- Reference remembered facts naturally when relevant (don’t force it)
 - Give actionable advice, not generic tips
 - Help with planning, prioritization, reflection, and motivation
 - If asked to generate a daily plan, use their actual tasks and goals

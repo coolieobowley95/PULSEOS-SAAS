@@ -35,7 +35,6 @@ export default function Register() {
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-md">
         <div className="flex items-center justify-center gap-3 mb-8">
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-neon-blue/90 to-neon-purple/90 shadow-[0_0_40px_rgba(168,85,247,0.16)] flex items-center justify-center font-bold">
-            P
           </div>
           <div>
             <div className="text-lg font-semibold text-fg">PulseOS</div>
@@ -98,7 +97,10 @@ export default function Register() {
             <div className="text-xs text-fg-muted mt-5 text-center">
               Have an account?{' '}
               <Link to="/login" className="text-neon-blue hover:text-neon-blue/80">
-                Sign in
+              Sign in
+<Link to="/landing" className="text-xs text-slate-500 hover:text-slate-300 transition-colors">
+  <br></br>← Back to home
+</Link>
               </Link>
             </div>
           </CardContent>

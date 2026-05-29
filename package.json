@@ -1,11 +1,24 @@
 {
-	"dependencies": {
-		"@prisma/adapter-pg": "^7.8.0",
-		"dotenv": "^17.4.2",
-		"node-fetch": "^3.3.2",
-		"pg": "^8.21.0"
-	},
-	"devDependencies": {
-		"@types/pg": "^8.20.0"
-	}
+  "name": "pulseos",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev:frontend": "pnpm --dir frontend run dev",
+    "dev:backend": "pnpm --dir backend run dev",
+    "dev": "pnpm exec concurrently -n FRONTEND,BACKEND -c blue,green \"pnpm --dir frontend run dev\" \"pnpm --dir backend run dev\""
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "dotenv": "^17.4.2",
+    "node-fetch": "^3.3.2",
+    "pg": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.20.0",
+    "concurrently": "^9.2.1"
+  }
 }
