@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "nodemon --watch . --ext js,json --delay 0.2 index.js",
     "start": "node index.js",
@@ -20,7 +24,6 @@
       "onFail": "download"
     }
   },
-  "type": "module",
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
