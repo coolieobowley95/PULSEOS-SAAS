@@ -1,11 +1,12 @@
 import Stripe from 'stripe'
 import { prisma } from '../lib/prisma.js'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
+const getStripe = () => new Stripe(process.env.STRIPE_SECRET_KEY)
 
 // ─── POST /api/billing/checkout ──────────────────────────────────────────────
 export const createCheckoutSession = async (req, res) => {
   try {
+    const stripe = getStripe()
     const user = await prisma.user.findUnique({ where: { id: req.userId } })
     if (!user) return res.status(404).json({ message: 'User not found' })
 
@@ -34,9 +35,9 @@ export const createCheckoutSession = async (req, res) => {
 }
 
 // ─── POST /api/billing/portal ─────────────────────────────────────────────────
-// Lets Pro users manage/cancel their subscription
 export const createPortalSession = async (req, res) => {
   try {
+    const stripe = getStripe()
     const user = await prisma.user.findUnique({ where: { id: req.userId } })
     if (!user?.stripeCustomerId) {
       return res.status(400).json({ message: 'No billing account found' })
@@ -69,6 +70,7 @@ export const getBillingStatus = async (req, res) => {
 
 // ─── POST /api/billing/webhook ────────────────────────────────────────────────
 export const handleWebhook = async (req, res) => {
+  const stripe = getStripe()
   const sig = req.headers['stripe-signature']
   let event
 
@@ -94,7 +96,6 @@ export const handleWebhook = async (req, res) => {
         console.log('User upgraded to Pro:', session.metadata.userId)
         break
       }
-
       case 'customer.subscription.deleted': {
         const subscription = event.data.object
         const user = await prisma.user.findFirst({
@@ -109,7 +110,6 @@ export const handleWebhook = async (req, res) => {
         }
         break
       }
-
       case 'invoice.payment_failed': {
         const invoice = event.data.object
         console.warn('Payment failed for customer:', invoice.customer)
