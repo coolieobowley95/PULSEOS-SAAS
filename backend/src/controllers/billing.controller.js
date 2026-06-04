@@ -22,8 +22,8 @@ export const createCheckoutSession = async (req, res) => {
         price: process.env.STRIPE_PRO_PRICE_ID,
         quantity: 1
       }],
-      success_url: `${process.env.CLIENT_URL}/settings?upgraded=true`,
-      cancel_url: `${process.env.CLIENT_URL}/settings`,
+      success_url: `${process.env.CLIENT_URL}/profile?upgraded=true`,
+      cancel_url: `${process.env.CLIENT_URL}/profile`,
       metadata: { userId: user.id }
     })
 
@@ -45,7 +45,7 @@ export const createPortalSession = async (req, res) => {
 
     const session = await stripe.billingPortal.sessions.create({
       customer: user.stripeCustomerId,
-      return_url: `${process.env.CLIENT_URL}/settings`
+      return_url: `${process.env.CLIENT_URL}/profile`
     })
 
     res.json({ url: session.url })
@@ -112,7 +112,18 @@ export const handleWebhook = async (req, res) => {
       }
       case 'invoice.payment_failed': {
         const invoice = event.data.object
-        console.warn('Payment failed for customer:', invoice.customer)
+        const user = await prisma.user.findFirst({
+          where: { stripeCustomerId: invoice.customer }
+        })
+        if (user) {
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { plan: 'free' }
+          })
+          console.warn('Payment failed — user downgraded to free:', user.id)
+        } else {
+          console.warn('Payment failed — no user found for customer:', invoice.customer)
+        }
         break
       }
     }

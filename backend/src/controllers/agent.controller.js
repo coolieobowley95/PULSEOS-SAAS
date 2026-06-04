@@ -1,10 +1,9 @@
 import { prisma } from '../lib/prisma.js'
 import { getGroq } from '../lib/groq.js'
 
-const groq = getGroq()
-
 export const runAgent = async (req, res) => {
   try {
+    const groq = getGroq()
     const { instruction } = req.body
     if (!instruction) return res.status(400).json({ message: 'Instruction required' })
 

@@ -1,12 +1,9 @@
-// backend/src/routes/startup.routes.js
-import express from "express";
-import { generateStartup } from "../controllers/startup.controller.js";
-import { protect } from "../middleware/auth.middleware.js";
+import express from 'express'
+import { generateStartup } from '../controllers/startup.controller.js'
+import { protect, requirePro } from '../middleware/auth.middleware.js'
 
-const router = express.Router();
+const router = express.Router()
 
-// All startup generator routes require auth
-// POST /api/startup/generate
-router.post("/generate", protect, generateStartup);
+router.post('/generate', protect, requirePro, generateStartup)  // AI call — Pro only
 
-export default router;
+export default router

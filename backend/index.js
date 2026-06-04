@@ -1,4 +1,4 @@
-﻿import 'dotenv/config'
+import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
 import { createServer } from 'http'
@@ -27,6 +27,7 @@ import billingRoutes   from './src/routes/billing.routes.js'
 // Other
 import { startBriefingCron } from './src/cron/briefing.cron.js'
 import { errorMiddleware }    from './src/utils/errorHandler.js'
+import { authLimiter, aiLimiter } from './src/middleware/rateLimit.middleware.js'
 
 const app        = express()
 const httpServer = createServer(app)
@@ -50,18 +51,18 @@ app.use((req, res, next) => { req.io = io; next() })
 
 // ── Routes ────────────────────────────────────────────────────────────────────
 app.get('/api/health', (req, res) => res.json({ message: 'PulseOS API is running 🚀' }))
-app.use('/api/auth',      authRoutes)
+app.use('/api/auth',      authLimiter, authRoutes)
 app.use('/api/tasks',     taskRoutes)
 app.use('/api/goals',     goalRoutes)
 app.use('/api/journal',   journalRoutes)
-app.use('/api/chat',      chatRoutes)
-app.use('/api/briefing',  briefingRoutes)
+app.use('/api/chat',      aiLimiter,   chatRoutes)
+app.use('/api/briefing',  aiLimiter,   briefingRoutes)
 app.use('/api/memory',    memoryRoutes)
 app.use('/api/analytics', analyticsRoutes)
-app.use('/api/agent',     agentRoutes)
-app.use('/api/report',    reportRoutes)
+app.use('/api/agent',     aiLimiter,   agentRoutes)
+app.use('/api/report',    aiLimiter,   reportRoutes)
 app.use('/api/feed',      feedRoutes)
-app.use('/api/startup',   startupRoutes)
+app.use('/api/startup',   aiLimiter,   startupRoutes)
 app.use('/api/calendar',  calendarRoutes)
 app.use('/api/streaks',   streakRoutes)
 app.use('/api/push',      pushRoutes)
@@ -80,7 +81,7 @@ io.on('connection', (socket) => {
 httpServer.on('error', (error) => {
   if (error.syscall !== 'listen') throw error
   const bind = typeof PORT === 'string' ? `Pipe ${PORT}` : `Port ${PORT}`
-  if (error.code === 'EACCES')   { console.error(`${bind} requires elevated privileges.`); process.exit(1) }
+  if (error.code === 'EACCES')    { console.error(`${bind} requires elevated privileges.`); process.exit(1) }
   if (error.code === 'EADDRINUSE') { console.error(`${bind} is already in use.`); process.exit(1) }
   throw error
 })

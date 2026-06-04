@@ -1,8 +1,6 @@
 import { prisma } from '../lib/prisma.js'
 import { getGroq } from '../lib/groq.js'
 
-const groq = getGroq()
-
 const postInclude = {
   user: { select: { id: true, name: true, email: true } },
   likes: { select: { userId: true } },
@@ -261,6 +259,7 @@ export const getMyPosts = async (req, res) => {
 
 async function generateAISummary(postId, content) {
   try {
+    const groq = getGroq()
     const completion = await groq.chat.completions.create({
       model: 'llama-3.1-8b-instant',
       messages: [{

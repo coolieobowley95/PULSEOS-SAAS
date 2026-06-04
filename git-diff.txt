@@ -1,0 +1,658 @@
+warning: in the working copy of '.npmrc', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/index.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/prisma.config.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/prisma/schema.prisma', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/railway.toml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/agent.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/analytics.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/auth.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/billing.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/briefing.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/calendar.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/chat.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/feed.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/github.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/goals.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/journal.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/profile.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/push.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/report.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/startup.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/streak.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/controllers/tasks.controller.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/cron/briefing.cron.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/lib/groq.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/lib/prisma.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/middleware/auth.middleware.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/agent.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/analytics.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/auth.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/billing.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/briefing.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/calendar.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/chat.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/feed.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/github.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/goals.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/journal.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/profile.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/push.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/report.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/startup.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/streak.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/routes/tasks.routes.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'backend/src/utils/errorHandler.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/postcss.config.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/public/sw.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/components/DailyBriefing.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/context/AuthContext.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/context/LanguageContext.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/hooks/useVoice.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Agent.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Analytics.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Calendar.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Feed.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Integrations.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Landing.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Profile.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/StartupGenerator.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/Streaks.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/UserProfile.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/pages/WeeklyReport.jsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/services/api.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/services/push.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'frontend/src/services/socket.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pnpm-lock.yaml', LF will be replaced by CRLF the next time Git touches it
+diff --git a/backend/index.js b/backend/index.js
+index 05bf99b..bea7cd6 100644
+--- a/backend/index.js
++++ b/backend/index.js
+@@ -1,4 +1,4 @@
+-﻿import 'dotenv/config'
++import 'dotenv/config'
+ import express from 'express'
+ import cors from 'cors'
+ import { createServer } from 'http'
+@@ -27,6 +27,7 @@ import billingRoutes   from './src/routes/billing.routes.js'
+ // Other
+ import { startBriefingCron } from './src/cron/briefing.cron.js'
+ import { errorMiddleware }    from './src/utils/errorHandler.js'
++import { authLimiter, aiLimiter } from './src/middleware/rateLimit.middleware.js'
+ 
+ const app        = express()
+ const httpServer = createServer(app)
+@@ -50,18 +51,18 @@ app.use((req, res, next) => { req.io = io; next() })
+ 
+ // ── Routes ────────────────────────────────────────────────────────────────────
+ app.get('/api/health', (req, res) => res.json({ message: 'PulseOS API is running 🚀' }))
+-app.use('/api/auth',      authRoutes)
++app.use('/api/auth',      authLimiter, authRoutes)
+ app.use('/api/tasks',     taskRoutes)
+ app.use('/api/goals',     goalRoutes)
+ app.use('/api/journal',   journalRoutes)
+-app.use('/api/chat',      chatRoutes)
+-app.use('/api/briefing',  briefingRoutes)
++app.use('/api/chat',      aiLimiter,   chatRoutes)
++app.use('/api/briefing',  aiLimiter,   briefingRoutes)
+ app.use('/api/memory',    memoryRoutes)
+ app.use('/api/analytics', analyticsRoutes)
+-app.use('/api/agent',     agentRoutes)
+-app.use('/api/report',    reportRoutes)
++app.use('/api/agent',     aiLimiter,   agentRoutes)
++app.use('/api/report',    aiLimiter,   reportRoutes)
+ app.use('/api/feed',      feedRoutes)
+-app.use('/api/startup',   startupRoutes)
++app.use('/api/startup',   aiLimiter,   startupRoutes)
+ app.use('/api/calendar',  calendarRoutes)
+ app.use('/api/streaks',   streakRoutes)
+ app.use('/api/push',      pushRoutes)
+@@ -80,7 +81,7 @@ io.on('connection', (socket) => {
+ httpServer.on('error', (error) => {
+   if (error.syscall !== 'listen') throw error
+   const bind = typeof PORT === 'string' ? `Pipe ${PORT}` : `Port ${PORT}`
+-  if (error.code === 'EACCES')   { console.error(`${bind} requires elevated privileges.`); process.exit(1) }
++  if (error.code === 'EACCES')    { console.error(`${bind} requires elevated privileges.`); process.exit(1) }
+   if (error.code === 'EADDRINUSE') { console.error(`${bind} is already in use.`); process.exit(1) }
+   throw error
+ })
+@@ -101,4 +102,4 @@ httpServer.listen(PORT, () => {
+   } catch (err) {
+     console.error('Failed to start cron jobs:', err)
+   }
+-})
+\ No newline at end of file
++})
+diff --git a/backend/package.json b/backend/package.json
+index 73a2332..3737289 100644
+--- a/backend/package.json
++++ b/backend/package.json
+@@ -25,6 +25,7 @@
+     "cors": "^2.8.6",
+     "dotenv": "^17.4.2",
+     "express": "^5.2.1",
++    "express-rate-limit": "^7.5.0",
+     "googleapis": "^172.0.0",
+     "groq-sdk": "^1.2.0",
+     "jsonwebtoken": "^9.0.3",
+@@ -33,7 +34,8 @@
+     "prisma": "^7.8.0",
+     "socket.io": "^4.8.3",
+     "stripe": "^22.1.1",
+-    "web-push": "^3.6.7"
++    "web-push": "^3.6.7",
++    "zod": "^3.23.8"
+   },
+   "devDependencies": {
+     "nodemon": "^3.1.14"
+diff --git a/backend/prisma.config.ts b/backend/prisma.config.ts
+index bd40ef2..af956d8 100644
+--- a/backend/prisma.config.ts
++++ b/backend/prisma.config.ts
+@@ -1,3 +1,13 @@
++/**
++ * Prisma driver-adapter config (early access).
++ *
++ * Requires TWO env vars:
++ *   DATABASE_URL  — pooled connection string used at runtime (e.g. PgBouncer / Supabase pooler)
++ *   DIRECT_URL    — direct (non-pooled) connection string used for migrations only
++ *
++ * Both should be set in your .env and in your production environment.
++ * If DIRECT_URL is missing, `prisma migrate` will fail silently.
++ */
+ import { defineConfig } from 'prisma/config'
+ import 'dotenv/config'
+ 
+@@ -30,4 +40,4 @@ export default defineConfig({
+     })
+     return new PrismaPg(pool)
+   }
+-})
+\ No newline at end of file
++})
+diff --git a/backend/prisma/schema.prisma b/backend/prisma/schema.prisma
+index a3b2929..52f0e88 100644
+--- a/backend/prisma/schema.prisma
++++ b/backend/prisma/schema.prisma
+@@ -8,6 +8,7 @@ generator client {
+ 
+ datasource db {
+   provider = "postgresql"
++  // Connection URL is configured in prisma.config.ts for Prisma 7 driver adapters.
+ }
+ 
+ model User {
+diff --git a/backend/src/controllers/agent.controller.js b/backend/src/controllers/agent.controller.js
+index 4031f8a..0d26f57 100644
+--- a/backend/src/controllers/agent.controller.js
++++ b/backend/src/controllers/agent.controller.js
+@@ -1,10 +1,9 @@
+ import { prisma } from '../lib/prisma.js'
+ import { getGroq } from '../lib/groq.js'
+ 
+-const groq = getGroq()
+-
+ export const runAgent = async (req, res) => {
+   try {
++    const groq = getGroq()
+     const { instruction } = req.body
+     if (!instruction) return res.status(400).json({ message: 'Instruction required' })
+ 
+diff --git a/backend/src/controllers/analytics.controller.js b/backend/src/controllers/analytics.controller.js
+index f9e2a50..3bf1a48 100644
+--- a/backend/src/controllers/analytics.controller.js
++++ b/backend/src/controllers/analytics.controller.js
+@@ -1,9 +1,6 @@
+ import { prisma } from '../lib/prisma.js'
+-import Groq from 'groq-sdk'
+ import { getGroq } from '../lib/groq.js'
+ 
+-const groq = getGroq()
+-
+ export const getMoodAnalytics = async (req, res) => {
+   try {
+     const days = parseInt(req.query.days) || 30
+@@ -82,6 +79,7 @@ export const getMoodAnalytics = async (req, res) => {
+ 
+ export const getMoodInsight = async (req, res) => {
+   try {
++    const groq = getGroq()
+     const journals = await prisma.journal.findMany({
+       where: { userId: req.userId },
+       orderBy: { createdAt: 'desc' },
+diff --git a/backend/src/controllers/auth.controller.js b/backend/src/controllers/auth.controller.js
+index f2c490e..08b707d 100644
+--- a/backend/src/controllers/auth.controller.js
++++ b/backend/src/controllers/auth.controller.js
+@@ -7,8 +7,6 @@ const token = (id) => jwt.sign({ userId: id }, process.env.JWT_SECRET, { expires
+ export const register = async (req, res) => {
+   try {
+     const { name, email, password } = req.body
+-    if (!name || !email || !password)
+-      return res.status(400).json({ message: 'All fields required' })
+ 
+     const exists = await prisma.user.findUnique({ where: { email } })
+     if (exists) return res.status(409).json({ message: 'Email already in use' })
+@@ -16,7 +14,7 @@ export const register = async (req, res) => {
+     const hashed = await bcrypt.hash(password, 10)
+     const user = await prisma.user.create({ data: { name, email, password: hashed } })
+ 
+-    res.status(201).json({ token: token(user.id), user: { id: user.id, name: user.name, email: user.email } })
++    res.status(201).json({ token: token(user.id), user: { id: user.id, name: user.name, email: user.email, plan: user.plan } })
+   } catch (err) {
+     res.status(500).json({ message: 'Server error', error: err.message })
+   }
+@@ -31,7 +29,7 @@ export const login = async (req, res) => {
+     const match = await bcrypt.compare(password, user.password)
+     if (!match) return res.status(401).json({ message: 'Invalid credentials' })
+ 
+-    res.json({ token: token(user.id), user: { id: user.id, name: user.name, email: user.email } })
++    res.json({ token: token(user.id), user: { id: user.id, name: user.name, email: user.email, plan: user.plan } })
+   } catch (err) {
+     res.status(500).json({ message: 'Server error', error: err.message })
+   }
+@@ -41,7 +39,7 @@ export const getMe = async (req, res) => {
+   try {
+     const user = await prisma.user.findUnique({
+       where: { id: req.userId },
+-      select: { id: true, name: true, email: true, createdAt: true }
++      select: { id: true, name: true, email: true, createdAt: true, plan: true }
+     })
+     res.json(user)
+   } catch (err) {
+diff --git a/backend/src/controllers/billing.controller.js b/backend/src/controllers/billing.controller.js
+index 628fd73..18afe57 100644
+--- a/backend/src/controllers/billing.controller.js
++++ b/backend/src/controllers/billing.controller.js
+@@ -22,8 +22,8 @@ export const createCheckoutSession = async (req, res) => {
+         price: process.env.STRIPE_PRO_PRICE_ID,
+         quantity: 1
+       }],
+-      success_url: `${process.env.CLIENT_URL}/settings?upgraded=true`,
+-      cancel_url: `${process.env.CLIENT_URL}/settings`,
++      success_url: `${process.env.CLIENT_URL}/profile?upgraded=true`,
++      cancel_url: `${process.env.CLIENT_URL}/profile`,
+       metadata: { userId: user.id }
+     })
+ 
+@@ -45,7 +45,7 @@ export const createPortalSession = async (req, res) => {
+ 
+     const session = await stripe.billingPortal.sessions.create({
+       customer: user.stripeCustomerId,
+-      return_url: `${process.env.CLIENT_URL}/settings`
++      return_url: `${process.env.CLIENT_URL}/profile`
+     })
+ 
+     res.json({ url: session.url })
+@@ -112,7 +112,18 @@ export const handleWebhook = async (req, res) => {
+       }
+       case 'invoice.payment_failed': {
+         const invoice = event.data.object
+-        console.warn('Payment failed for customer:', invoice.customer)
++        const user = await prisma.user.findFirst({
++          where: { stripeCustomerId: invoice.customer }
++        })
++        if (user) {
++          await prisma.user.update({
++            where: { id: user.id },
++            data: { plan: 'free' }
++          })
++          console.warn('Payment failed — user downgraded to free:', user.id)
++        } else {
++          console.warn('Payment failed — no user found for customer:', invoice.customer)
++        }
+         break
+       }
+     }
+diff --git a/backend/src/controllers/feed.controller.js b/backend/src/controllers/feed.controller.js
+index d44d8cc..8237143 100644
+--- a/backend/src/controllers/feed.controller.js
++++ b/backend/src/controllers/feed.controller.js
+@@ -1,8 +1,6 @@
+ import { prisma } from '../lib/prisma.js'
+ import { getGroq } from '../lib/groq.js'
+ 
+-const groq = getGroq()
+-
+ const postInclude = {
+   user: { select: { id: true, name: true, email: true } },
+   likes: { select: { userId: true } },
+@@ -261,6 +259,7 @@ export const getMyPosts = async (req, res) => {
+ 
+ async function generateAISummary(postId, content) {
+   try {
++    const groq = getGroq()
+     const completion = await groq.chat.completions.create({
+       model: 'llama-3.1-8b-instant',
+       messages: [{
+diff --git a/backend/src/controllers/report.controller.js b/backend/src/controllers/report.controller.js
+index 3db83d6..1b77599 100644
+--- a/backend/src/controllers/report.controller.js
++++ b/backend/src/controllers/report.controller.js
+@@ -1,9 +1,8 @@
+ import { prisma } from '../lib/prisma.js'
+ import { getGroq } from '../lib/groq.js'
+ 
+-const groq = getGroq()
+-
+ async function generateReportForUser(userId) {
++  const groq = getGroq()
+   const now = new Date()
+   const weekStart = new Date(now)
+   weekStart.setDate(now.getDate() - now.getDay())
+diff --git a/backend/src/controllers/report.routes.js b/backend/src/controllers/report.routes.js
+deleted file mode 100644
+index 19f93ff..0000000
+--- a/backend/src/controllers/report.routes.js
++++ /dev/null
+@@ -1,12 +0,0 @@
+-import { Router } from 'express'
+-import { getLatestReport, generateReport, getAllReports } from '../controllers/report.controller.js'
+-import { protect } from '../middleware/auth.middleware.js'
+-
+-const router = Router()
+-router.use(protect)
+-
+-router.get('/latest', getLatestReport)
+-router.get('/all', getAllReports)
+-router.post('/generate', generateReport)
+-
+-export default router
+\ No newline at end of file
+diff --git a/backend/src/middleware/auth.middleware.js b/backend/src/middleware/auth.middleware.js
+index 02fe7b1..f0071b4 100644
+--- a/backend/src/middleware/auth.middleware.js
++++ b/backend/src/middleware/auth.middleware.js
+@@ -1,4 +1,5 @@
+ import jwt from 'jsonwebtoken'
++import { prisma } from '../lib/prisma.js'
+ 
+ export const protect = (req, res, next) => {
+   const auth = req.headers.authorization
+@@ -12,4 +13,19 @@ export const protect = (req, res, next) => {
+   } catch {
+     res.status(401).json({ message: 'Token invalid or expired' })
+   }
+-}
+\ No newline at end of file
++}
++
++export const requirePro = async (req, res, next) => {
++  try {
++    const user = await prisma.user.findUnique({
++      where: { id: req.userId },
++      select: { plan: true }
++    })
++    if (!user || user.plan !== 'pro') {
++      return res.status(403).json({ message: 'Pro plan required to access this feature' })
++    }
++    next()
++  } catch (err) {
++    res.status(500).json({ message: 'Server error', error: err.message })
++  }
++}
+diff --git a/backend/src/routes/agent.routes.js b/backend/src/routes/agent.routes.js
+index 8a1797a..a7f53ce 100644
+--- a/backend/src/routes/agent.routes.js
++++ b/backend/src/routes/agent.routes.js
+@@ -1,10 +1,10 @@
+ import { Router } from 'express'
+ import { runAgent } from '../controllers/agent.controller.js'
+-import { protect } from '../middleware/auth.middleware.js'
++import { protect, requirePro } from '../middleware/auth.middleware.js'
+ 
+ const router = Router()
+ router.use(protect)
+ 
+-router.post('/run', runAgent)
++router.post('/run', requirePro, runAgent)
+ 
+-export default router
+\ No newline at end of file
++export default router
+diff --git a/backend/src/routes/auth.routes.js b/backend/src/routes/auth.routes.js
+index f9c4a21..4ac9cb3 100644
+--- a/backend/src/routes/auth.routes.js
++++ b/backend/src/routes/auth.routes.js
+@@ -1,9 +1,12 @@
+ import { Router } from 'express'
+ import { register, login, getMe } from '../controllers/auth.controller.js'
+ import { protect } from '../middleware/auth.middleware.js'
++import { validate, registerSchema, loginSchema } from '../middleware/validate.middleware.js'
+ 
+ const router = Router()
+-router.post('/register', register)
+-router.post('/login', login)
+-router.get('/me', protect, getMe)
+-export default router
+\ No newline at end of file
++
++router.post('/register', validate(registerSchema), register)
++router.post('/login',    validate(loginSchema),    login)
++router.get('/me',        protect,                  getMe)
++
++export default router
+diff --git a/backend/src/routes/billing.routes.js b/backend/src/routes/billing.routes.js
+index 81bf1c1..f900259 100644
+--- a/backend/src/routes/billing.routes.js
++++ b/backend/src/routes/billing.routes.js
+@@ -1,4 +1,4 @@
+-import express, { Router } from 'express'
++import { Router } from 'express'
+ import { protect } from '../middleware/auth.middleware.js'
+ import {
+   createCheckoutSession,
+@@ -9,7 +9,7 @@ import {
+ 
+ const router = Router()
+ 
+-router.post('/webhook', express.raw({ type: 'application/json' }), handleWebhook)
++router.post('/webhook', handleWebhook)
+ router.get('/status', protect, getBillingStatus)
+ router.post('/checkout', protect, createCheckoutSession)
+ router.post('/portal', protect, createPortalSession)
+diff --git a/backend/src/routes/briefing.routes.js b/backend/src/routes/briefing.routes.js
+index 508477d..39df4c1 100644
+--- a/backend/src/routes/briefing.routes.js
++++ b/backend/src/routes/briefing.routes.js
+@@ -1,10 +1,11 @@
+ import { Router } from 'express'
+-import { protect } from '../middleware/auth.middleware.js'
++import { protect, requirePro } from '../middleware/auth.middleware.js'
+ import { getTodayBriefing, refreshBriefing } from '../controllers/briefing.controller.js'
+ 
+ const router = Router()
+ router.use(protect)
++
+ router.get('/today', getTodayBriefing)
+-router.post('/refresh', refreshBriefing)
++router.post('/refresh', requirePro, refreshBriefing)  // AI call — Pro only
+ 
+ export default router
+diff --git a/backend/src/routes/chat.routes.js b/backend/src/routes/chat.routes.js
+index 4027029..c04454b 100644
+--- a/backend/src/routes/chat.routes.js
++++ b/backend/src/routes/chat.routes.js
+@@ -2,7 +2,7 @@ import { Router } from 'express'
+ import {
+   getChats, createChat, getMessages, sendMessage, deleteChat
+ } from '../controllers/chat.controller.js'
+-import { protect } from '../middleware/auth.middleware.js'
++import { protect, requirePro } from '../middleware/auth.middleware.js'
+ 
+ const router = Router()
+ router.use(protect)
+@@ -10,7 +10,7 @@ router.use(protect)
+ router.get('/', getChats)
+ router.post('/', createChat)
+ router.get('/:id/messages', getMessages)
+-router.post('/:id/messages', sendMessage)
++router.post('/:id/messages', requirePro, sendMessage)  // AI call — Pro only
+ router.delete('/:id', deleteChat)
+ 
+-export default router
+\ No newline at end of file
++export default router
+diff --git a/backend/src/routes/report.routes.js b/backend/src/routes/report.routes.js
+index 77a822a..31b60c4 100644
+--- a/backend/src/routes/report.routes.js
++++ b/backend/src/routes/report.routes.js
+@@ -1,13 +1,12 @@
+ import { Router } from 'express'
+ import { getLatestReport, generateReport, getAllReports } from '../controllers/report.controller.js'
+-import { protect } from '../middleware/auth.middleware.js'
++import { protect, requirePro } from '../middleware/auth.middleware.js'
+ 
+ const router = Router()
+ router.use(protect)
+ 
+ router.get('/latest', getLatestReport)
+ router.get('/all', getAllReports)
+-router.post('/generate', generateReport)
++router.post('/generate', requirePro, generateReport)  // AI call — Pro only
+ 
+ export default router
+-
+diff --git a/backend/src/routes/startup.routes.js b/backend/src/routes/startup.routes.js
+index 731d2eb..02fd8e1 100644
+--- a/backend/src/routes/startup.routes.js
++++ b/backend/src/routes/startup.routes.js
+@@ -1,12 +1,9 @@
+-// backend/src/routes/startup.routes.js
+-import express from "express";
+-import { generateStartup } from "../controllers/startup.controller.js";
+-import { protect } from "../middleware/auth.middleware.js";
++import express from 'express'
++import { generateStartup } from '../controllers/startup.controller.js'
++import { protect, requirePro } from '../middleware/auth.middleware.js'
+ 
+-const router = express.Router();
++const router = express.Router()
+ 
+-// All startup generator routes require auth
+-// POST /api/startup/generate
+-router.post("/generate", protect, generateStartup);
++router.post('/generate', protect, requirePro, generateStartup)  // AI call — Pro only
+ 
+-export default router;
+\ No newline at end of file
++export default router
+diff --git a/frontend/index.html b/frontend/index.html
+index 67580f9..f94d687 100644
+--- a/frontend/index.html
++++ b/frontend/index.html
+@@ -4,15 +4,10 @@
+     <meta charset="UTF-8" />
+     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-
+-    <!-- Google Search Console verification -->
+-    <meta name="google-site-verification" content="udL4cHcjF73VxStv-zzl6IjIM65LRg1taDKUnLUOC-0" />
+-
+-    <title>PulseOS - AI Life Assistant</title>
++    <title>frontend</title>
+   </head>
+-
+   <body>
+     <div id="root"></div>
+     <script type="module" src="/src/main.jsx"></script>
+   </body>
+-</html>
+\ No newline at end of file
++</html>
+diff --git a/frontend/src/services/api.js b/frontend/src/services/api.js
+index 4d1cb10..5d2374f 100644
+--- a/frontend/src/services/api.js
++++ b/frontend/src/services/api.js
+@@ -1,7 +1,17 @@
+ import axios from 'axios'
+ 
++const BASE_URL = import.meta.env.VITE_API_URL
++
++// Fail loudly at startup in production rather than silently hitting localhost
++if (!BASE_URL && import.meta.env.PROD) {
++  throw new Error(
++    '[PulseOS] VITE_API_URL is not set. ' +
++    'Add it to your production environment variables before building.'
++  )
++}
++
+ const api = axios.create({
+-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
++  baseURL: BASE_URL || 'http://localhost:5000/api'
+ })
+ 
+ api.interceptors.request.use((config) => {
+@@ -21,4 +31,4 @@ api.interceptors.response.use(
+   }
+ )
+ 
+-export default api
+\ No newline at end of file
++export default api
+diff --git a/pnpm-lock.yaml b/pnpm-lock.yaml
+index 50bcafd..474eeec 100644
+--- a/pnpm-lock.yaml
++++ b/pnpm-lock.yaml
+@@ -51,6 +51,9 @@ importers:
+       express:
+         specifier: ^5.2.1
+         version: 5.2.1
++      express-rate-limit:
++        specifier: ^7.5.0
++        version: 7.5.1(express@5.2.1)
+       googleapis:
+         specifier: ^172.0.0
+         version: 172.0.0
+@@ -78,6 +81,9 @@ importers:
+       web-push:
+         specifier: ^3.6.7
+         version: 3.6.7
++      zod:
++        specifier: ^3.23.8
++        version: 3.25.76
+     devDependencies:
+       nodemon:
+         specifier: ^3.1.14
+@@ -1260,6 +1266,12 @@ packages:
+     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
+     engines: {node: '>=0.8.x'}
+ 
++  express-rate-limit@7.5.1:
++    resolution: {integrity: sha512-7iN8iPMDzOMHPUYllBEsQdWVB6fPDMPqwjBaFrgr4Jgr/+okjvzAy+UHlYYL/Vs0OsOrMkwS6PJDkFlJwoxUnw==}
++    engines: {node: '>= 16'}
++    peerDependencies:
++      express: '>= 4.11'
++
+   express@5.2.1:
+     resolution: {integrity: sha512-hIS4idWWai69NezIdRt2xFVofaF4j+6INOpJlVOLDO8zXGpUVEVzIYk12UUi2JzjEzWL3IOAxcTubgz9Po0yXw==}
+     engines: {node: '>= 18'}
+@@ -2474,6 +2486,9 @@ packages:
+     peerDependencies:
+       zod: ^3.25.0 || ^4.0.0
+ 
++  zod@3.25.76:
++    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
++
+   zod@4.4.3:
+     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+ 
+@@ -3555,6 +3570,10 @@ snapshots:
+ 
+   events@3.3.0: {}
+ 
++  express-rate-limit@7.5.1(express@5.2.1):
++    dependencies:
++      express: 5.2.1
++
+   express@5.2.1:
+     dependencies:
+       accepts: 2.0.0
+@@ -4698,4 +4717,6 @@ snapshots:
+     dependencies:
+       zod: 4.4.3
+ 
++  zod@3.25.76: {}
++
+   zod@4.4.3: {}

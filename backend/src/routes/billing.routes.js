@@ -1,4 +1,4 @@
-import express, { Router } from 'express'
+import { Router } from 'express'
 import { protect } from '../middleware/auth.middleware.js'
 import {
   createCheckoutSession,
@@ -9,7 +9,7 @@ import {
 
 const router = Router()
 
-router.post('/webhook', express.raw({ type: 'application/json' }), handleWebhook)
+router.post('/webhook', handleWebhook)
 router.get('/status', protect, getBillingStatus)
 router.post('/checkout', protect, createCheckoutSession)
 router.post('/portal', protect, createPortalSession)

@@ -1,0 +1,77 @@
+ M .npmrc
+ M backend/index.js
+ M backend/package.json
+ M backend/prisma.config.ts
+ M backend/prisma/schema.prisma
+ M backend/railway.toml
+ M backend/src/controllers/agent.controller.js
+ M backend/src/controllers/analytics.controller.js
+ M backend/src/controllers/auth.controller.js
+ M backend/src/controllers/billing.controller.js
+ M backend/src/controllers/briefing.controller.js
+ M backend/src/controllers/calendar.controller.js
+ M backend/src/controllers/chat.controller.js
+ M backend/src/controllers/feed.controller.js
+ M backend/src/controllers/github.controller.js
+ M backend/src/controllers/goals.controller.js
+ M backend/src/controllers/journal.controller.js
+ M backend/src/controllers/profile.controller.js
+ M backend/src/controllers/push.controller.js
+ M backend/src/controllers/report.controller.js
+ D backend/src/controllers/report.routes.js
+ M backend/src/controllers/startup.controller.js
+ M backend/src/controllers/streak.controller.js
+ M backend/src/controllers/tasks.controller.js
+ M backend/src/cron/briefing.cron.js
+ M backend/src/lib/groq.js
+ M backend/src/lib/prisma.js
+ M backend/src/middleware/auth.middleware.js
+ M backend/src/routes/agent.routes.js
+ M backend/src/routes/analytics.routes.js
+ M backend/src/routes/auth.routes.js
+ M backend/src/routes/billing.routes.js
+ M backend/src/routes/briefing.routes.js
+ M backend/src/routes/calendar.routes.js
+ M backend/src/routes/chat.routes.js
+ M backend/src/routes/feed.routes.js
+ M backend/src/routes/github.routes.js
+ M backend/src/routes/goals.routes.js
+ M backend/src/routes/journal.routes.js
+ M backend/src/routes/profile.routes.js
+ M backend/src/routes/push.routes.js
+ M backend/src/routes/report.routes.js
+ M backend/src/routes/startup.routes.js
+ M backend/src/routes/streak.routes.js
+ M backend/src/routes/tasks.routes.js
+ M backend/src/utils/errorHandler.js
+ M frontend/index.html
+ M frontend/postcss.config.js
+ M frontend/public/sw.js
+ M frontend/src/components/DailyBriefing.jsx
+ M frontend/src/context/AuthContext.jsx
+ M frontend/src/context/LanguageContext.jsx
+ M frontend/src/hooks/useVoice.js
+ M frontend/src/pages/Agent.jsx
+ M frontend/src/pages/Analytics.jsx
+ M frontend/src/pages/Calendar.jsx
+ M frontend/src/pages/Feed.jsx
+ M frontend/src/pages/Integrations.jsx
+ M frontend/src/pages/Landing.jsx
+ M frontend/src/pages/Profile.jsx
+ M frontend/src/pages/StartupGenerator.jsx
+ M frontend/src/pages/Streaks.jsx
+ M frontend/src/pages/UserProfile.jsx
+ M frontend/src/pages/WeeklyReport.jsx
+ M frontend/src/services/api.js
+ M frontend/src/services/push.js
+ M frontend/src/services/socket.js
+ M pnpm-lock.yaml
+?? applied_pulseos_ref.txt
+?? backend/.env.example
+?? backend/src/middleware/rateLimit.middleware.js
+?? backend/src/middleware/validate.middleware.js
+?? build-output.txt
+?? frontend/.env.example
+?? git-repo.txt
+?? git-status.txt
+?? install.log

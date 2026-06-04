@@ -1,3 +1,13 @@
+/**
+ * Prisma driver-adapter config (early access).
+ *
+ * Requires TWO env vars:
+ *   DATABASE_URL  — pooled connection string used at runtime (e.g. PgBouncer / Supabase pooler)
+ *   DIRECT_URL    — direct (non-pooled) connection string used for migrations only
+ *
+ * Both should be set in your .env and in your production environment.
+ * If DIRECT_URL is missing, `prisma migrate` will fail silently.
+ */
 import { defineConfig } from 'prisma/config'
 import 'dotenv/config'
 

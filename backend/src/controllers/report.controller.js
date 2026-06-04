@@ -1,9 +1,8 @@
 import { prisma } from '../lib/prisma.js'
 import { getGroq } from '../lib/groq.js'
 
-const groq = getGroq()
-
 async function generateReportForUser(userId) {
+  const groq = getGroq()
   const now = new Date()
   const weekStart = new Date(now)
   weekStart.setDate(now.getDate() - now.getDay())

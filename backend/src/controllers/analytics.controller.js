@@ -1,8 +1,5 @@
 import { prisma } from '../lib/prisma.js'
-import Groq from 'groq-sdk'
 import { getGroq } from '../lib/groq.js'
-
-const groq = getGroq()
 
 export const getMoodAnalytics = async (req, res) => {
   try {
@@ -82,6 +79,7 @@ export const getMoodAnalytics = async (req, res) => {
 
 export const getMoodInsight = async (req, res) => {
   try {
+    const groq = getGroq()
     const journals = await prisma.journal.findMany({
       where: { userId: req.userId },
       orderBy: { createdAt: 'desc' },
