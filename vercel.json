@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm --filter frontend run build && mkdir -p dist && cp -r frontend/dist/. dist/",
+  "buildCommand": "pnpm build",
   "outputDirectory": "dist",
   "installCommand": "pnpm install"
 }
