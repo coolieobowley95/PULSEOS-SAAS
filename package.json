@@ -9,7 +9,8 @@
   "scripts": {
     "dev:frontend": "pnpm --dir frontend run dev",
     "dev:backend": "pnpm --dir backend run dev",
-    "dev": "pnpm exec concurrently -n FRONTEND,BACKEND -c blue,green \"pnpm --dir frontend run dev\" \"pnpm --dir backend run dev\""
+    "dev": "pnpm exec concurrently -n FRONTEND,BACKEND -c blue,green \"pnpm --dir frontend run dev\" \"pnpm --dir backend run dev\"",
+    "build:frontend": "pnpm --filter frontend run build"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",
