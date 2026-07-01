@@ -77,7 +77,7 @@ export const sendMessage = async (req, res) => {
     console.log('Calling Groq API...')
     groq = groq || getGroqClient()
     const completion = await groq.chat.completions.create({
-      model: 'llama-3.1-8b-instant',
+      model: 'qwen-plus',
       messages,
       max_tokens: 1024,
       temperature: 0.7

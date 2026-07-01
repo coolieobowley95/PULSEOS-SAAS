@@ -183,7 +183,7 @@ export const getAISummary = async (req, res) => {
 
     const groq = getGroq()
     const completion = await groq.chat.completions.create({
-      model: 'llama-3.1-8b-instant',
+      model: 'qwen-plus',
       messages: [
         {
           role: 'system',

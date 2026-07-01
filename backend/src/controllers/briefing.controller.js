@@ -213,7 +213,7 @@ export const generateBriefingForUser = async (userId, forceRefresh = false) => {
   const groq = getGroqClient()
 
   const aiResponse = await groq.chat.completions.create({
-    model: 'llama-3.1-8b-instant',
+    model: 'qwen-plus',
     messages: [
       {
         role: 'system',

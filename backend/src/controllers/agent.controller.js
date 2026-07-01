@@ -55,7 +55,7 @@ Return ONLY valid JSON, no markdown:
 }`
 
     const completion = await groq.chat.completions.create({
-      model: 'llama-3.1-8b-instant',
+      model: 'qwen-plus',
       messages: [{ role: 'user', content: prompt }],
       max_tokens: 1000,
       temperature: 0.5

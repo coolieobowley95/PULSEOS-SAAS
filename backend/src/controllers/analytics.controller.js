@@ -98,7 +98,7 @@ export const getMoodInsight = async (req, res) => {
     ).join('\n')
 
     const completion = await groq.chat.completions.create({
-      model: 'llama-3.1-8b-instant',
+      model: 'qwen-plus',
       messages: [{
         role: 'user',
         content: `Analyze this user's mood journal from the last 14 days and give a short, personal, actionable insight in 2-3 sentences. Be warm and specific, not generic.

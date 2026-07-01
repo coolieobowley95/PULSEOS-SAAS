@@ -85,7 +85,7 @@ Generate a weekly report in this EXACT JSON format (no markdown, no extra text):
 }`
 
   const completion = await groq.chat.completions.create({
-    model: 'llama-3.1-8b-instant',
+    model: 'qwen-plus',
     messages: [{ role: 'user', content: prompt }],
     max_tokens: 600,
     temperature: 0.7

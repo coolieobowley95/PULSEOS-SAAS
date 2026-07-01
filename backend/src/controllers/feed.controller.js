@@ -261,7 +261,7 @@ async function generateAISummary(postId, content) {
   try {
     const groq = getGroq()
     const completion = await groq.chat.completions.create({
-      model: 'llama-3.1-8b-instant',
+      model: 'qwen-plus',
       messages: [{
         role: 'user',
         content: `Generate a short, encouraging 1-sentence AI insight or reaction to this productivity update. Be warm and specific. Return only the sentence:\n\n"${content}"`
