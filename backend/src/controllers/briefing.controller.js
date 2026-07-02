@@ -120,8 +120,8 @@ Example output shape:
 }
 
 export const generateBriefingForUser = async (userId, forceRefresh = false) => {
-  if (!process.env.GROQ_API_KEY) {
-    throw new Error('Missing GROQ_API_KEY environment variable')
+  if (!process.env.QWEN_API_KEY) {
+    throw new Error('Missing QWEN_API_KEY environment variable')
   }
 
   const user = await prisma.user.findUnique({ where: { id: userId } })
